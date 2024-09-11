@@ -1,0 +1,235 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+}
+
+.container {
+    text-align: center;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+h1 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.settings {
+    margin-bottom: 20px;
+}
+
+.mode-selector,
+.difficulty-selector {
+    margin-bottom: 15px;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 15px;
+    margin-bottom: 20px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    color: #007bff;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.cell:hover {
+    transform: scale(1.1);
+    background-color: #e0f7fa;
+}
+
+.status {
+    margin-bottom: 20px;
+    font-size: 1.25rem;
+    color: #495057;
+    min-height: 30px;
+}
+
+.reset {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.reset:hover {
+    background-color: #0056b3;
+}
+
+.scoreboard {
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.scoreboard div {
+    margin-bottom: 5px;
+}
+/* Existing styles... */
+
+.cell {
+    /* existing styles */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Winning Cells Animation */
+.winning-cell {
+    animation: highlight 1s ease-in-out;
+}
+
+@keyframes highlight {
+    0% {
+        background-color: #a5d6a7;
+    }
+
+    50% {
+        background-color: #76c7c0;
+    }
+
+    100% {
+        background-color: #a5d6a7;
+    }
+}
+
+/* Confetti Animation */
+.confetti {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.confetti-piece {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #f39c12;
+    opacity: 0;
+    border-radius: 50%;
+}
+
+@keyframes confetti-fall {
+    0% {
+        transform: translateY(-100vh);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+/* Classic Theme */
+body.classic .cell {
+    border: 1px solid #ddd;
+    background-color: #f8f9fa;
+}
+
+body.classic .cell:hover {
+    background-color: #e2e6ea;
+}
+
+/* Futuristic Theme */
+body.futuristic .cell {
+    border: 2px solid #333;
+    background-color: #1a1a1a;
+    color: #00ff00;
+}
+
+body.futuristic .cell:hover {
+    background-color: #333;
+}
+
+/* Neon Theme */
+body.neon .cell {
+    border: 1px solid #ff00ff;
+    background-color: #000000;
+    color: #00ffff;
+}
+
+body.neon .cell:hover {
+    background-color: #222222;
+}
+
+/* Winning Cells Animation */
+.winning-cell {
+    animation: highlight 1s ease-in-out;
+}
+
+@keyframes highlight {
+    0% {
+        background-color: #a5d6a7;
+    }
+
+    50% {
+        background-color: #76c7c0;
+    }
+
+    100% {
+        background-color: #a5d6a7;
+    }
+}
+
+/* Add this to your CSS */
+.grid {
+    display: grid;
+    gap: 5px;
+    width: 100%;
+    height: 100%;
+}
+
+.cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cell.winning-cell {
+    animation: highlight 1s ease-in-out;
+}
+
+/* General grid styles for different sizes */
+.grid-3x3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-4x4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.grid-5x5 {
+    grid-template-columns: repeat(5, 1fr);
+}
